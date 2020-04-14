@@ -1,24 +1,19 @@
 palette.setColors(color.gradient(
     0x0000ff, 0xff0000, 16)
 )
-let sprite = sprites.create(image.create(8,8))
+let heat = image.create(80,80);
+let sprite = sprites.create(heat)
 let maxsprite = sprites.create(img`
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1
+    1 . . . . . . . . 1
+    1 . . . . . . . . 1
+    1 . . . . . . . . 1
+    1 . . . . . . . . 1
+    1 . . . . . . . . 1
+    1 . . . . . . . . 1
+    1 . . . . . . . . 1
+    1 . . . . . . . . 1
+    1 1 1 1 1 1 1 1 1 1
 `)
 let dev = new amg88xx.AMG88XX(pins.i2c());
 
@@ -45,21 +40,16 @@ function setPixels(pixels: number[]) {
         maxt = Math. max(v, maxt);
     }
 
-    let i = image.create(8,8);
     for(let x = 0; x < 8; ++x) {
         for(let y = 0; y < 8; ++y) {
             const k = x * 8 + y;
             const t = pixels[k];
-            i.setPixel(x, y, Math.map(t, mint, maxt, 0, 15) | 0);
+            heat.fillRect(x * 10, y * 10, 10, 10, Math.map(t, mint, maxt, 0, 15) | 0);
             if (t == maxt) {
                 maxsprite.say(`${t}c`)
-                maxsprite.left = sprite.left + x * 16;
-                maxsprite.top = sprite.top + y * 16;
+                maxsprite.left = sprite.left + x * 10;
+                maxsprite.top = sprite.top + y * 10;
             }
         }
     }
-    i = i.doubled().doubled().doubled().doubled();
-    sprite.setImage(i);
-    sprite.right = screen.width;
-    sprite.top = 0;
 }
