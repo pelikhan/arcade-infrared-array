@@ -1,3 +1,5 @@
+game.splash("connect a AMG833",  "Grid Eye to your arcade")
+
 palette.setColors(color.gradient(
     0x0000ff, 0xff0000, 16)
 )
