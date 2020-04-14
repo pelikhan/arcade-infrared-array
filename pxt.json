@@ -4,7 +4,7 @@
     "dependencies": {
         "device": "*",
         "palette": "*",
-        "pxt-amg88xx": "github:pelikhan/pxt-amg88xx#v0.0.2"
+        "pxt-amg88xx": "github:pelikhan/pxt-amg88xx#v0.0.4"
     },
     "files": [
         "main.ts",
