@@ -1,0 +1,20 @@
+{
+    "name": "arcade-infrared-array",
+    "description": "",
+    "dependencies": {
+        "device": "*",
+        "palette": "*",
+        "pxt-amg88xx": "github:pelikhan/pxt-amg88xx#v0.0.2"
+    },
+    "files": [
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj"
+}
