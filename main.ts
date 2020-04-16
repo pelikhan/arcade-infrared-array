@@ -46,7 +46,7 @@ function setPixels(pixels: number[]) {
         for(let y = 0; y < 8; ++y) {
             const k = x * 8 + y;
             const t = pixels[k];
-            heat.fillRect(x * 10, y * 10, 10, 10, Math.map(t, mint, maxt, 0, 15) | 0);
+            heat.fillRect(x * 10, y * 10, 10, 10, Math.clamp(0, 15, Math.map(t, 20, 35, 0, 15) | 0));
             if (t == maxt) {
                 maxsprite.say(`${t}c`)
                 maxsprite.left = sprite.left + x * 10;
