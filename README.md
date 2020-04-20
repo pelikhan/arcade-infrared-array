@@ -1,7 +1,3 @@
----
-
----
-
 > Open this page at [https://pelikhan.github.io/arcade-infrared-array/](https://pelikhan.github.io/arcade-infrared-array/)
 
 This demo uses a AMG8833 Grid Eye sensor to display a thermal image.
