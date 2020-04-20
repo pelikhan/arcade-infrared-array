@@ -8,7 +8,7 @@ To edit this repository in MakeCode.
 
 * open [https://arcade.makecode.com/](https://arcade.makecode.com/)
 * click on **Import** then click on **Import URL**
-* paste **https://github.com/pelikhan/arcade-infrared-array** and click import
+* paste **https://github.com/pelikhan/arcade-infrared-array** and click import.
 
 #### Metadata (used for search, rendering)
 
